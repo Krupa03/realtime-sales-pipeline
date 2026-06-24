@@ -40,7 +40,7 @@ def write_to_timescale(batch_df, batch_id):
         "quantity", "price", "region", "status", "order_time"
     ).write \
      .format("jdbc") \
-     .option("url", "jdbc:postgresql://localhost:5432/sales_db") \
+     .option("url", "jdbc:postgresql://127.0.0.1:5433/sales_db?sslmode=disable") \
      .option("dbtable", "orders") \
      .option("user", "admin") \
      .option("password", "password") \
